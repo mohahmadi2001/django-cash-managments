@@ -23,6 +23,11 @@ from rest_framework_simplejwt.views import (
 from users.views import (
     ConfirmEmailView,
 )
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularRedocView,
+    SpectacularSwaggerView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +39,13 @@ urlpatterns = [
 
     # user
     path('user/account/', include("users.urls")),
+
+    # transactions
+    path('api/transactions/', include("transactions.urls")),
+
+    # swagger
+    path("schema/", SpectacularAPIView.as_view(api_version="v1"), name="schema"),
+    path("swagger/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
+    path("redoc/", SpectacularRedocView.as_view(url_name="schema"), name="redoc"),
 
 ]
