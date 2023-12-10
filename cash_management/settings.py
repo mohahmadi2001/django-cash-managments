@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'users',
     'transactions',
+    'reports',
 
     'rest_framework',
     'rest_framework_simplejwt',
