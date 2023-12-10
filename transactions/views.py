@@ -2,8 +2,8 @@ from rest_framework import generics, status
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from .models import Transactions
-from .serializers import TransactionSerializer
+from .models import Transactions, UserBalance
+from .serializers import TransactionSerializer, UserBalanceSerializer
 
 
 class TransactionCreateView(generics.CreateAPIView):
@@ -77,3 +77,11 @@ class TransactionDeleteView(generics.DestroyAPIView):
         return Response({"detail": "Transaction deleted successfully."},
                         status=status.HTTP_200_OK
                         )
+
+
+class UserBalanceAPIView(generics.RetrieveAPIView):
+    serializer_class = UserBalanceSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        return UserBalance.objects.filter(user=self.request.user)

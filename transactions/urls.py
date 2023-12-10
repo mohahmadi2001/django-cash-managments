@@ -4,7 +4,7 @@ from .views import (
     TransactionListView,
     TransactionDetailView,
     TransactionUpdateView,
-    TransactionDeleteView
+    TransactionDeleteView, UserBalanceAPIView
 )
 
 urlpatterns = [
@@ -13,5 +13,5 @@ urlpatterns = [
     path('detail/<int:pk>/', TransactionDetailView.as_view(), name='transaction-detail'),
     path('update/<int:pk>/', TransactionUpdateView.as_view(), name='transaction-update'),
     path('delete/<int:pk>/', TransactionDeleteView.as_view(), name='transaction-detail'),
-
+    path('user_balance/', UserBalanceAPIView.as_view(), name='user-balance'),
 ]
