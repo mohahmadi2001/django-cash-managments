@@ -25,4 +25,24 @@ class Transactions(models.Model):
         return f"{self.user.username} - {self.amount} - {self.date}"
 
 
+class UserBalance(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+
+    def __str__(self):
+        return f"Balance for {self.user.username} is {self.balance}"
+
+    def calculate_balance(self):
+        """
+        Calculate the user's balance based on transactions.
+        """
+        transactions = Transactions.objects.filter(user=self.user)
+        income = transactions.filter(trans_type='income').aggregate(models.Sum('amount'))['amount__sum'] or 0
+        expense = transactions.filter(trans_type='expense').aggregate(models.Sum('amount'))['amount__sum'] or 0
+
+        self.balance = income - abs(expense)
+        self.save()
+
+
+
 

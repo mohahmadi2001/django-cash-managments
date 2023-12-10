@@ -38,7 +38,6 @@ INSTALLED_APPS = [
 
     'users',
     'transactions',
-    'balances',
 
     'rest_framework',
     'rest_framework_simplejwt',
