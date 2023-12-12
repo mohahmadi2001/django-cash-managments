@@ -32,13 +32,12 @@ a cash management system using Django and Django Rest Framework. The system shou
 ```
 .
 ├── users              # User account management
-├── core               # Core functionalities
-├── meetings           # meeting management
-├── reservations       # reservation management
-├── teams               # team management
-├── app                # Project settings
+├── transactions       # transactions management
+├── reports            # reports management
+├── utils              # utils
+├── cash_management    # Project settings
 ├── manage.py          # Django management script
-└── requirements       # Project dependencies
+└── requirements.txt   # Project dependencies
 ```
 
 ## Requirements
