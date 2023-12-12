@@ -33,12 +33,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # authentication
-    path('auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/auth/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/auth/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('confirm-email/', ConfirmEmailView.as_view(), name='confirm-email'),
 
     # user
-    path('user/account/', include("users.urls")),
+    path('api/user/account/', include("users.urls")),
 
     # transactions
     path('api/transactions/', include("transactions.urls")),

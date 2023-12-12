@@ -70,5 +70,5 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         if 'email' in validated_data and instance.email != validated_data['email']:
-            instance.is_email_confirmed = False
+            instance.is_active = False
         return super().update(instance, validated_data)

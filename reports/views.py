@@ -35,7 +35,7 @@ class TransactionReportTypeDeleteAPIView(generics.DestroyAPIView):
 
 
 class TransactionReportCreateAPIView(generics.CreateAPIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     serializer_class = TransactionReportSerializer
 
     def create(self, request, *args, **kwargs):

@@ -1,14 +1,14 @@
 from datetime import datetime
 from django.test import TestCase
 from django.contrib.auth.models import User
-from .models import Transactions, UserBalance, Category
+from .models import Transactions, UserBalance, TransactionCategories
 from decimal import Decimal
 
 
 class TransactionsTestCase(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(username='testuser', password='testpass')
-        self.category = Category.objects.create(name='Test Category')
+        self.category = TransactionCategories.objects.create(name='Test Category')
         self.client.force_login(self.user)
 
     def test_update_balance_income(self):

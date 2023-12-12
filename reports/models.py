@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-from transactions.models import Transactions, Category
+from transactions.models import Transactions, TransactionCategories
 
 
 class TransactionReportType(models.Model):
@@ -46,7 +46,7 @@ class TransactionReport(models.Model):
 
     @staticmethod
     def generate_category_expense_report(user, year, month):
-        categories = Category.objects.all()
+        categories = TransactionCategories.objects.all()
         report_content = ""
 
         for category in categories:

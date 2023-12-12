@@ -4,13 +4,13 @@ from django.contrib.auth.models import User
 from django.test import TestCase
 
 from reports.models import TransactionReportType, TransactionReport
-from transactions.models import Category, Transactions
+from transactions.models import TransactionCategories, Transactions
 
 
 class TransactionReportTestCase(TestCase):
     def setUp(self):
         self.user = User.objects.create(username="testuser", password="testpassword")
-        self.category = Category.objects.create(name="TestCategory")
+        self.category = TransactionCategories.objects.create(name="TestCategory")
         self.report_type = TransactionReportType.objects.create(name="TestReportType")
 
     def test_generate_monthly_summary_no_transactions(self):

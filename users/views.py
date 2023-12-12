@@ -114,8 +114,8 @@ class ProfileUpdateView(UpdateAPIView):
         serializer.is_valid(raise_exception=True)
         self.perform_update(serializer)
         if 'email' in request.data and instance.email != request.data['email']:
-            instance.is_email_confirmed = False
-            return redirect('confirm-email')
+            instance.is_active = False
+            send_confirmation_email(serializer.instance)
         return Response(serializer.data)
 
 
