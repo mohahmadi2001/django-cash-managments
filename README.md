@@ -21,8 +21,8 @@ a cash management system using Django and Django Rest Framework. The system shou
     - The system  keep track of the user's balance by calculating the current balance based on the transactions.
     - The balance  be updated automatically whenever a new transaction is created or updated.
 - **Reports**:
-    - Users should be able to generate reports to analyze their cash flow.
-    - The system should provide at least one type of report, such as a monthly summary or a category-wise expense report.
+    - Users be able to generate reports to analyze their cash flow.
+    - The system  provide report, such as a monthly summary or a category-wise expense report.
 
 ## Photos: DB STRUCTURE
 ![ERD](/cash_management.png)
@@ -67,13 +67,13 @@ a cash management system using Django and Django Rest Framework. The system shou
 
     ```
     python3 -m venv venv
-    source venv/bin/activate  # On Windows, use `venvScriptsactivate`
+    source venv/bin/activate  # On Windows, use `venv/Scripts/activate`
     ```
 
 4. Install the required packages:
 
     ```
-    pip install -r requirements/developments.txt
+    pip install -r requirements.txt
     ```
 
 5. Apply migrations:
@@ -94,7 +94,7 @@ a cash management system using Django and Django Rest Framework. The system shou
     ```
 ## Usage
 
-To use the application, navigate to `http://localhost:8000/` in your web browser. You'll find options to manage meetings and reservations.
+To use the application, navigate to `http://localhost:8000/` in your web browser. You'll find options to manage transaction and cash flow.
 
 
 ## License
