@@ -24,7 +24,7 @@ a cash management system using Django and Django Rest Framework. The system shou
     - Users should be able to generate reports to analyze their cash flow.
     - The system should provide at least one type of report, such as a monthly summary or a category-wise expense report.
 
-## Photos:
+## Photos: DB STRUCTURE
 ![ERD](/cash_management.png)
 
 ## Project Structure
