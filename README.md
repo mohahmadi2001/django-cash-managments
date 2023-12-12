@@ -95,3 +95,8 @@ a cash management system using Django and Django Rest Framework. The system shou
 ## Usage
 
 To use the application, navigate to `http://localhost:8000/` in your web browser. You'll find options to manage meetings and reservations.
+
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
